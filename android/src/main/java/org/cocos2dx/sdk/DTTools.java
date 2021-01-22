@@ -115,9 +115,11 @@ public class DTTools {
 	}
 
 	public static String getAddress() {
-		String deviceId = ((TelephonyManager) config.getActivity()
-				.getBaseContext().getSystemService("phone")).getDeviceId();
-		return deviceId == null ? "StrangeDevice" : deviceId;
+		//String deviceId = ((TelephonyManager) config.getActivity()
+		//		.getBaseContext().getSystemService("phone")).getDeviceId();
+		//return deviceId == null ? "StrangeDevice" : deviceId;
+        // need to generate UUID, save it
+        return "TodoDeviceID";
 	}
 
 	private static final long getAvailMemory() {

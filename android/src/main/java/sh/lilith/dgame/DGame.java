@@ -1,7 +1,7 @@
 package sh.lilith.dgame;
 
 import android.Manifest;
-import 	android.content.pm.PackageManager;
+import android.content.pm.PackageManager;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -29,8 +29,9 @@ import org.cocos2dx.sdk.DTHandler;
 import org.cocos2dx.sdk.DTMsg;
 import org.cocos2dx.sdk.DTPlatform;
 import org.cocos2dx.sdk.DTTools;
+import com.chukong.cocosplay.client.CocosPlayClient;
 
-import 	androidx.core.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.app.ActivityCompat;
 
 /**
@@ -370,6 +371,7 @@ public class DGame extends Cocos2dxActivity {
         //continue..
 		super.onCreate(bundle);
 		this.checkPermissions();
+        CocosPlayClient.init(this, false);
 		this.config = DTConfigure.getInstance();
 		this.config.setActivity(this);
 		this.config.setContext(this);
@@ -433,9 +435,9 @@ public class DGame extends Cocos2dxActivity {
 
 	}
 
-	public Cocos2dxGLSurfaceView onCreateGLSurfaceView() {
-		return new LuaGLSurfaceView(this);
-	}
+	//public Cocos2dxGLSurfaceView onCreateGLSurfaceView() {
+	//	return new LuaGLSurfaceView(this);
+	//}
 
 	protected void onDestroy() {
 		super.onDestroy();

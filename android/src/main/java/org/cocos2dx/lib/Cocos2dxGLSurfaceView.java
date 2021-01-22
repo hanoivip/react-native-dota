@@ -10,6 +10,8 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.inputmethod.InputMethodManager;
 import com.loopj.android.http.BuildConfig;
+import android.os.Process;
+import com.chukong.cocosplay.client.CocosPlayClient;
 
 public class Cocos2dxGLSurfaceView extends GLSurfaceView {
     private static final int HANDLER_CLOSE_IME_KEYBOARD = 3;
@@ -308,7 +310,10 @@ public class Cocos2dxGLSurfaceView extends GLSurfaceView {
 
     public boolean onKeyDown(int i, KeyEvent keyEvent) {
         switch (i) {
-            case 4:
+            case KeyEvent.KEYCODE_BACK:
+                //Process.killProcess(Process.myPid());
+                if (CocosPlayClient.m_activity != null)
+                    CocosPlayClient.m_activity.finish();
             case 82:
                 queueEvent(new AnonymousClass11(i));
                 return true;

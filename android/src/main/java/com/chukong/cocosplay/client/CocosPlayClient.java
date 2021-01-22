@@ -4,6 +4,9 @@ import android.app.Activity;
 import com.loopj.android.http.BuildConfig;
 
 public final class CocosPlayClient {
+    
+    public static Activity m_activity = null;
+
     public static boolean fileExists(String str) {
         return false;
     }
@@ -13,7 +16,8 @@ public final class CocosPlayClient {
     }
 
     public static boolean init(Activity activity, boolean z) {
-        return false;
+        m_activity = activity;
+        return z;
     }
 
     public static boolean isDemo() {
